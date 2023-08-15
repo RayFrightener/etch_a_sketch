@@ -2,23 +2,24 @@
 const button = document.getElementById("button");
  
 button.addEventListener("click", () => {
-    const gridSize = prompt("Enter a grid size (up to 100");
+    let gridSize = prompt("Enter a grid size (up to 100)");
     
-    while(!isValidGridSize){
+    while(!isValidGridSize(gridSize)){
         gridSize = prompt("Please enter a valid gridSize: ");
     }
 
     function isValidGridSize(size){
         return !isNaN(size) && parseInt(size) > 0 && parseInt(size) <= 100;
     }
-    upgradeGrid(gridSize);
+    let upgdatedGridSize = gridSize * gridSize;
+    upgradeGrid(upgdatedGridSize);
 })
 
-function upgradeGrid(gridSize){
+function upgradeGrid(updatedGridSize){
     const container = document.getElementById("container");
     container.innerHTML = "";
 
-    for (let i=0; i<gridSize; i++){
+    for (let i=0; i<updatedGridSize; i++){
         let gridElement= document.createElement("div");
         container.appendChild(gridElement);
     
