@@ -10,3 +10,7 @@
     height: calc(100% / 16);
     border: 1px solid black;
 }
+#button {
+    display: flex;
+    justify-content: center;
+}
